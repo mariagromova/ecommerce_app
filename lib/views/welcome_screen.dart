@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/views/buyers/buyers_screen.dart';
 import 'package:ecommerce_app/views/ui_additional_widgets.dart/animated_background.dart';
 import 'package:ecommerce_app/views/ui_additional_widgets.dart/snake_button.dart';
+import 'package:ecommerce_app/views/vendors/vendors_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -79,17 +80,17 @@ class WelcomeScreen extends StatelessWidget {
                       color: Colors.white,
                 ),
                 )),
-          SizedBox(height: 450),
+                  const SizedBox(height: 450),
                       Row(
                         children: <Widget>[
                           Expanded(
                             child: SnakeButton(
                               onPressed: () =>
-                                  _openPage(context, const BuyersScreen()),
+                                  _openPage(context,  BuyersScreen()),
                               child: Text(
                                 'DROP.BUYERS',
                                 style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.w900,
                                   fontSize: 14,
                                   color: Color.fromARGB(255, 132, 210, 255)
                                 ),
@@ -100,7 +101,7 @@ class WelcomeScreen extends StatelessWidget {
                           Expanded(
                             child: RectangularButton(
                               onPressed: () =>
-                                  _openPage(context, const BuyersScreen()),
+                                  _openPage(context,  VendorsScreen()),
                               label: 'DROP.VENDORS',
                               
                             ),

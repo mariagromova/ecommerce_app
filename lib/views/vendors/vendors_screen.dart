@@ -1,13 +1,12 @@
 import 'package:ecommerce_app/views/ui_additional_widgets.dart/animated_background.dart';
 import 'package:ecommerce_app/views/ui_additional_widgets.dart/snake_button.dart';
+import 'package:ecommerce_app/views/vendors/vendors_login_screen.dart';
+import 'package:ecommerce_app/views/vendors/vendors_sign_in_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'buyers_login_screen.dart';
-import 'buyers_sign_in.dart';
-
-class BuyersScreen extends StatelessWidget {
-  BuyersScreen({super.key});
+class VendorsScreen extends StatelessWidget {
+  VendorsScreen({super.key});
 
   final hideNotifier = ValueNotifier(false);
 
@@ -59,24 +58,34 @@ class BuyersScreen extends StatelessWidget {
                         Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
-                            'DROP.Buyers',
+                            'DROP.',
                             style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w700,
-                                fontSize: 45,
+                                fontSize: 40,
                                 color: Color.fromARGB(255, 73, 162, 213)),
                           ),
                         ),
-                        const SizedBox(height: 550),
+                         Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            'Vendors',
+                            style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 40,
+                                color: Color.fromARGB(255, 73, 162, 213)),
+                          ),
+                        ),
+                        const SizedBox(height: 450),
                         Row(
                           children: <Widget>[
                             Expanded(
                               child: SnakeButton(
                                 onPressed: () =>
-                                    _openPage(context, BuyersLoginScreen()),
+                                    _openPage(context, VendorsLoginScreen()),
                                 child: Text(
                                   'LOGIN',
                                   style: GoogleFonts.poppins(
-                                      fontWeight: FontWeight.w500,
+                                      fontWeight: FontWeight.w900,
                                       fontSize: 14,
                                       color:
                                           Color.fromARGB(255, 132, 210, 255)),
@@ -87,7 +96,7 @@ class BuyersScreen extends StatelessWidget {
                             Expanded(
                               child: RectangularButton(
                                 onPressed: () =>
-                                    _openPage(context, BuyersSignIn()),
+                                    _openPage(context, VendorsSignInScreen()),
                                 label: 'SIGN IN',
                               ),
                             ),
