@@ -76,7 +76,7 @@ class BuyersScreen extends StatelessWidget {
                                 child: Text(
                                   'LOGIN',
                                   style: GoogleFonts.poppins(
-                                      fontWeight: FontWeight.w500,
+                                      fontWeight: FontWeight.w900,
                                       fontSize: 14,
                                       color:
                                           Color.fromARGB(255, 132, 210, 255)),
@@ -140,7 +140,7 @@ class RectangularButton extends StatelessWidget {
         child: Text(
           label,
           style: GoogleFonts.poppins(
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w900,
               fontSize: 14,
               color: Color.fromARGB(255, 132, 210, 255)),
         ),
