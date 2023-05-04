@@ -62,11 +62,11 @@ class BuyersScreen extends StatelessWidget {
                             'DROP.Buyers',
                             style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w700,
-                                fontSize: 45,
+                                fontSize: 40,
                                 color: Color.fromARGB(255, 73, 162, 213)),
                           ),
                         ),
-                        const SizedBox(height: 550),
+                        const SizedBox(height: 420),
                         Row(
                           children: <Widget>[
                             Expanded(

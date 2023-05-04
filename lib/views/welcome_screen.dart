@@ -56,7 +56,7 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                       ),
                 
-                SizedBox( height: 10,),
+              SizedBox(height: 10),
                        
               Align(
                 alignment: Alignment.centerLeft,
@@ -80,7 +80,7 @@ class WelcomeScreen extends StatelessWidget {
                       color: Colors.white,
                 ),
                 )),
-                  const SizedBox(height: 450),
+                  const SizedBox(height: 390),
                       Row(
                         children: <Widget>[
                           Expanded(
