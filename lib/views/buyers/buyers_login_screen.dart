@@ -96,7 +96,7 @@ class BuyersLoginScreen extends StatelessWidget {
                                     'Did you forget your password?',
                                     style: TextStyle(
                                       fontSize: 12,
-                                      color: backgroundColor,
+                                      color: elementsColor,
                                     ),
                                   ),
                                   const SizedBox(height: 20),
@@ -114,7 +114,7 @@ class BuyersLoginScreen extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(10),
                                         ),
-                                        backgroundColor: backgroundColor,
+                                        backgroundColor: elementsColor,
                                       ),
                                       child: const Text(
                                         'Log in',
@@ -156,7 +156,7 @@ class _DragDownIndication extends StatelessWidget {
            style: GoogleFonts.poppins(
               fontWeight: FontWeight.w700,
               fontSize: 40,
-              color: Color.fromARGB(255, 73, 162, 213)),
+              color: logoColor),
               'Log in',   
                ),
 

@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/views/ui_additional_widgets.dart/animated_background.dart';
+import 'package:ecommerce_app/views/ui_additional_widgets.dart/colors.dart';
 import 'package:ecommerce_app/views/ui_additional_widgets.dart/snake_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -63,7 +64,7 @@ class BuyersScreen extends StatelessWidget {
                             style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w700,
                                 fontSize: 40,
-                                color: Color.fromARGB(255, 73, 162, 213)),
+                                color: logoColor),
                           ),
                         ),
                         const SizedBox(height: 470),
@@ -78,8 +79,7 @@ class BuyersScreen extends StatelessWidget {
                                   style: GoogleFonts.poppins(
                                       fontWeight: FontWeight.w900,
                                       fontSize: 14,
-                                      color:
-                                          Color.fromARGB(255, 132, 210, 255)),
+                                      color:logoColor),
                                 ),
                               ),
                             ),
@@ -132,7 +132,7 @@ class RectangularButton extends StatelessWidget {
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
-          foregroundColor: Colors.white,
+          foregroundColor: basicColor,
           shape: const RoundedRectangleBorder(
             side: BorderSide(color: Colors.white, width: 3),
           ),
@@ -142,7 +142,7 @@ class RectangularButton extends StatelessWidget {
           style: GoogleFonts.poppins(
               fontWeight: FontWeight.w900,
               fontSize: 14,
-              color: Color.fromARGB(255, 132, 210, 255)),
+              color: logoColor),
         ),
       ),
     );

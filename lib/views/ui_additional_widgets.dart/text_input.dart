@@ -50,7 +50,7 @@ class TextInput extends StatelessWidget {
               borderSide: const BorderSide(color: Color.fromARGB(255, 37, 89, 242), width: 2),
             ),
             hintStyle: const TextStyle(color: Colors.grey),
-            prefixIcon: Icon(iconData, color: backgroundColor, size: 18),
+            prefixIcon: Icon(iconData, color: elementsColor, size: 18),
           ),
         );
       },
