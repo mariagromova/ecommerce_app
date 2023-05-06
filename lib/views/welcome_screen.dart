@@ -39,11 +39,9 @@ class WelcomeScreen extends StatelessWidget {
               );
             },
             child: Center(
-              child: SizedBox(
-                height: size.height * .75,
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 50),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 50),
+                child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
@@ -55,33 +53,35 @@ class WelcomeScreen extends StatelessWidget {
                           color: Colors.white
                         ),
                       ),
-                
-              SizedBox(height: 10),
+                                
+                              SizedBox(height: 10),
                        
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
+                              Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text(
                   'DROP',
                   style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w700,
                     
                       fontSize: 60,
                       color: Color.fromARGB(255, 73, 162, 213)),
-                ),
-              ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text(
                   'Your ecommerce platform',
                   style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w700,
                   
                       fontSize: 14,
                       color: Colors.white,
-                ),
-                )),
-                  const SizedBox(height: 390),
+                                ),
+                                )
+                                ),
+                  const SizedBox(height: 400),
                       Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: <Widget>[
                           Expanded(
                             child: SnakeButton(
@@ -110,9 +110,11 @@ class WelcomeScreen extends StatelessWidget {
                       )
                     
                   
-                
-                    ]),),
-          )))]) );
+                                
+                    ]),
+                ),))
+                )
+                ]) );
   }
 
   Future<void> _openPage(BuildContext context, Widget page) async {

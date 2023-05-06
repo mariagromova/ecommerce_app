@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/views/buyers/buyers_home_screen.dart';
+import 'package:ecommerce_app/views/ui_additional_widgets.dart/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -54,19 +55,8 @@ class BuyersLoginScreen extends StatelessWidget {
               child: SizedBox(
                 height: size.height,
                 child: Column(
-                  children: <Widget>[
-                    SizedBox(height: size.height * .1),
-                    Text(
-                      'Drop.Login',
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w700,
-                  
-                      fontSize: 14,
-                      color: Colors.white,
-                ),
-                      ),
-                    
-                    const Spacer(),
+                  children: <Widget>[                    
+                    const Spacer(flex: 1,),
                     Stack(
                       children: [
                         const Align(
@@ -74,13 +64,13 @@ class BuyersLoginScreen extends StatelessWidget {
                           child: _DragDownIndication(),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 55),
+                          padding: const EdgeInsets.only(top: 105),
                           child: ClipPath(
                             clipper: InvertedTopBorderClipper(
                               circularRadius: 40,
                             ),
                             child: Container(
-                              height: 340,
+                              height: 360,
                               width: double.infinity,
                               color: Colors.white,
                               padding:
@@ -106,11 +96,11 @@ class BuyersLoginScreen extends StatelessWidget {
                                     'Did you forget your password?',
                                     style: TextStyle(
                                       fontSize: 12,
-                                      color: const Color.fromARGB(255, 255, 244, 244),
+                                      color: backgroundColor,
                                     ),
                                   ),
                                   const SizedBox(height: 20),
-                                  SizedBox(
+                                  SizedBox(  // BUTTON
                                     width: size.width * .65,
                                     child: TextButton(
                                       onPressed: () {
@@ -124,11 +114,12 @@ class BuyersLoginScreen extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(10),
                                         ),
-                                        backgroundColor: Color.fromARGB(255, 73, 162, 213),
+                                        backgroundColor: backgroundColor,
                                       ),
                                       child: const Text(
                                         'Log in',
                                         style: TextStyle(
+                                          color: Colors.white,
                                           fontSize: 16,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -159,26 +150,31 @@ class _DragDownIndication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const Text(
-          'Log in',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
+         Text(
+           style: GoogleFonts.poppins(
+              fontWeight: FontWeight.w700,
+              fontSize: 40,
+              color: Color.fromARGB(255, 73, 162, 213)),
+              'Log in',   
+               ),
+
         Text(
           'Swipe to go back',
           style: TextStyle(
+            fontWeight: FontWeight.bold,
             height: 2,
-            fontSize: 14,
-            color: Colors.white.withOpacity(.9),
+            fontSize: 18,
+            color: Colors.white,
           ),
         ),
         Icon(
           Icons.keyboard_arrow_down,
-          color: Colors.white.withOpacity(.8),
-          size: 35)]
+          color: Colors.white,
+          size: 30)
+      
+          ]
         
         
         );

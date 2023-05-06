@@ -66,7 +66,7 @@ class BuyersScreen extends StatelessWidget {
                                 color: Color.fromARGB(255, 73, 162, 213)),
                           ),
                         ),
-                        const SizedBox(height: 420),
+                        const SizedBox(height: 470),
                         Row(
                           children: <Widget>[
                             Expanded(
