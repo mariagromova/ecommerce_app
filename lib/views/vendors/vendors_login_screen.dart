@@ -31,14 +31,15 @@ class VendorsLoginScreen extends StatelessWidget {
       if (!resizeNotifier.value) resizeNotifier.value = true;
     });
     return Scaffold(
-        backgroundColor: Colors.transparent,
-        body: GestureDetector(onVerticalDragUpdate: (details) {
+      backgroundColor: Colors.transparent,
+      body: GestureDetector(
+        onVerticalDragUpdate: (details) {
           if (details.primaryDelta! > 3) {
             resizeNotifier.value = false;
             Navigator.pop(context);
           }
         },
-         child: Stack(
+        child: Stack(
           children: <Widget>[
             ValueListenableBuilder<bool>(
               valueListenable: resizeNotifier,
@@ -55,8 +56,10 @@ class VendorsLoginScreen extends StatelessWidget {
               child: SizedBox(
                 height: size.height,
                 child: Column(
-                  children: <Widget>[                    
-                    const Spacer(flex: 1,),
+                  children: <Widget>[
+                    const Spacer(
+                      flex: 1,
+                    ),
                     Stack(
                       children: [
                         const Align(
@@ -92,15 +95,19 @@ class VendorsLoginScreen extends StatelessWidget {
                                         TextInputType.visiblePassword,
                                   ),
                                   const SizedBox(height: 10),
-                                  Text(
-                                    'Did you forget your password?',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: elementsColor,
+                                  TextButton(
+                                    onPressed: () {},
+                                    child: Text(
+                                      'Did you forget your password?',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: elementsColor,
+                                      ),
                                     ),
                                   ),
-                                  const SizedBox(height: 20),
-                                  SizedBox(  // BUTTON
+                                  const SizedBox(height: 10),
+                                  SizedBox(
+                                    // BUTTON
                                     width: size.width * .65,
                                     child: TextButton(
                                       onPressed: () {
@@ -149,34 +156,22 @@ class _DragDownIndication extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-         Text(
-           style: GoogleFonts.poppins(
-              fontWeight: FontWeight.w700,
-              fontSize: 40,
-              color: logoColor),
-              'Log in',   
-               ),
-
-        Text(
-          'Swipe to go back',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            height: 2,
-            fontSize: 18,
-            color: Colors.white,
-          ),
-        ),
-        Icon(
-          Icons.keyboard_arrow_down,
+    return Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+      Text(
+        style: GoogleFonts.poppins(
+            fontWeight: FontWeight.w700, fontSize: 40, color: logoColor),
+        'Log in',
+      ),
+      Text(
+        'Swipe to go back',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          height: 2,
+          fontSize: 18,
           color: Colors.white,
-          size: 30)
-      
-          ]
-        
-        
-        );
+        ),
+      ),
+      Icon(Icons.keyboard_arrow_down, color: Colors.white, size: 30)
+    ]);
   }
 }

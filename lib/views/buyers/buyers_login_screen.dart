@@ -92,14 +92,17 @@ class BuyersLoginScreen extends StatelessWidget {
                                         TextInputType.visiblePassword,
                                   ),
                                   const SizedBox(height: 10),
-                                  Text(
-                                    'Did you forget your password?',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: elementsColor,
+                                  TextButton(
+                                    onPressed: () {},
+                                    child: Text(
+                                      'Did you forget your password?',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: elementsColor,
+                                      ),
                                     ),
                                   ),
-                                  const SizedBox(height: 20),
+                                  const SizedBox(height: 10),
                                   SizedBox(  // BUTTON
                                     width: size.width * .65,
                                     child: TextButton(

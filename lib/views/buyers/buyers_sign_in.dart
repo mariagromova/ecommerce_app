@@ -12,13 +12,18 @@ class BuyersSignIn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final size = MediaQuery.of(context).size;
+
     final resizeNotifier = ValueNotifier<bool>(false);
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!resizeNotifier.value) resizeNotifier.value = true;
     });
+
     return Scaffold(
       backgroundColor: Colors.transparent,
+      
       body: GestureDetector(
         onVerticalDragUpdate: (details) {
           if (details.primaryDelta! > 3) {
@@ -40,16 +45,18 @@ class BuyersSignIn extends StatelessWidget {
                   child: child!,
                 );
               },
-              child: SizedBox(
+              child: 
+              SizedBox(
                 height: size.height,
-                child: Column(
+                child: 
+                Column(
                   children: <Widget>[
-                    SizedBox(height: size.height * .1),
-                  
+                   SizedBox(height: size.height * .1),
                     const Spacer(),
                     Stack(
                       children: [
-                        const Center(child: _DragDownIndication()),
+                        const Center(
+                          child: _DragDownIndication()),
                         Padding(
                            padding: const EdgeInsets.only(top: 90),
                           child: ClipPath(
@@ -107,7 +114,7 @@ class _FormInputsColumn extends StatelessWidget {
           textInputType: TextInputType.visiblePassword,
         ),
         const SizedBox(height: 5),
-        const _AcceptTerms(),
+
         const SizedBox(height: 10),
         SizedBox(
           width: size.width * .65,
@@ -168,47 +175,5 @@ class _DragDownIndication extends StatelessWidget {
   }
 }
 
-class _AcceptTerms extends StatelessWidget {
-  const _AcceptTerms();
 
-  @override
-  Widget build(BuildContext context) {
-    final valueNotifier = ValueNotifier(false);
-    return InkWell(
-      onTap: () => valueNotifier.value = !valueNotifier.value,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          ValueListenableBuilder<bool>(
-            valueListenable: valueNotifier,
-            builder: (context, value, child) {
-              return Checkbox(
-                value: value,
-                onChanged: (val) {},
-                checkColor: basicColor,
-                activeColor:  elementsColor,
-              );
-            },
-          ),
-          Text(
-            'I agree',
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[600],
-            ),
-          ),
-           Text(
-            ' terms and Conditions',
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
-              color: elementsColor,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
 

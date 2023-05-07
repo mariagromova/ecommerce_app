@@ -47,7 +47,8 @@ class VendorsScreen extends StatelessWidget {
               },
               child: Center(
                   child: SizedBox(
-                height: size.height * .75,
+                height: size.height ,
+                // * .75,
                 width: double.infinity,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 50),
