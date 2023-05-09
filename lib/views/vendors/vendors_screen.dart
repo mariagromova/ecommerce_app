@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/views/ui_additional_widgets.dart/animated_background.dart';
+import 'package:ecommerce_app/views/ui_additional_widgets.dart/colors.dart';
 import 'package:ecommerce_app/views/ui_additional_widgets.dart/snake_button.dart';
 import 'package:ecommerce_app/views/vendors/vendors_login_screen.dart';
 import 'package:ecommerce_app/views/vendors/vendors_sign_in_screen.dart';
@@ -14,16 +15,7 @@ class VendorsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-        appBar: AppBar(
-             backgroundColor: Colors.transparent,
-          leading: IconButton(
-         
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(Icons.arrow_back),
-          ),
-        ),
+       
         resizeToAvoidBottomInset: false,
         body: Stack(fit: StackFit.expand, children: <Widget>[
           const AnimatedBackground(),
@@ -47,7 +39,7 @@ class VendorsScreen extends StatelessWidget {
               },
               child: Center(
                   child: SizedBox(
-                height: size.height ,
+                height: size.height,
                 // * .75,
                 width: double.infinity,
                 child: Padding(
@@ -55,6 +47,19 @@ class VendorsScreen extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
+                        SizedBox(height: 60),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: IconButton(
+                           padding: EdgeInsets.fromLTRB(0, 0, 300, 0),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: Icon(Icons.arrow_back_ios_new),
+                            color: elementsColor,
+                            iconSize: 20,
+                          ),
+                        ),
                         SizedBox(height: 10),
                         Align(
                           alignment: Alignment.centerLeft,
@@ -66,7 +71,7 @@ class VendorsScreen extends StatelessWidget {
                                 color: Color.fromARGB(255, 73, 162, 213)),
                           ),
                         ),
-                         Align(
+                        Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
                             'Vendors',

@@ -11,22 +11,17 @@ class BuyersScreen extends StatelessWidget {
   BuyersScreen({super.key});
 
   final hideNotifier = ValueNotifier(false);
+  
+    final resizeNotifier = ValueNotifier<bool>(false);
+
+  
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-        appBar: AppBar(
-             backgroundColor: Colors.transparent,
-          leading: IconButton(
-         
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(Icons.arrow_back),
-          ),
-        ),
+        
         resizeToAvoidBottomInset: false,
         body: Stack(
           fit: StackFit.expand,
@@ -53,14 +48,28 @@ class BuyersScreen extends StatelessWidget {
               child: Center(
                   child: SizedBox(
                 height: size.height,
-                //  * .75,
+
                 width: double.infinity,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 50),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        SizedBox(height: 10),
+                        SizedBox(height: 60),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: IconButton(
+                           padding: EdgeInsets.fromLTRB(0, 0, 300, 0),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: Icon(Icons.arrow_back_ios_new),
+                            color: elementsColor,
+                            iconSize: 20,
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                   
                         Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
@@ -71,7 +80,7 @@ class BuyersScreen extends StatelessWidget {
                                 color: logoColor),
                           ),
                         ),
-                        const SizedBox(height: 440),
+                        const SizedBox(height: 500),
                         Row(
                           children: <Widget>[
                             Expanded(
