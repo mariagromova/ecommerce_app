@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/views/buyers/buyers_home_screen.dart';
+import 'package:ecommerce_app/views/buyers/buyers_main_screen.dart';
 import 'package:ecommerce_app/views/ui_additional_widgets.dart/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
@@ -16,7 +16,7 @@ class BuyersLoginScreen extends StatelessWidget {
       pageBuilder: (context, animation, secondaryAnimation) {
         return FadeTransition(
           opacity: animation,
-          child: const BuyersHomeScreen(),
+          child: const BuyersMainScreen(),
         );
       },
     );
@@ -111,7 +111,7 @@ class BuyersLoginScreen extends StatelessWidget {
                                     width: size.width * .65,
                                     child: TextButton(
                                       onPressed: () {
-                                         Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BuyersHomeScreen()));
+                                         Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BuyersMainScreen()));
                                       },
                                       style: TextButton.styleFrom(
                                         foregroundColor: Colors.white,
