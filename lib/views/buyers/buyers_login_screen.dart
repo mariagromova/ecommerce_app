@@ -111,7 +111,8 @@ class BuyersLoginScreen extends StatelessWidget {
                                     width: size.width * .65,
                                     child: TextButton(
                                       onPressed: () {
-                                         Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BuyersMainScreen()));
+                                         Navigator.of(context).push(MaterialPageRoute(builder: (context) => 
+                                         const BuyersMainScreen()));
                                       },
                                       style: TextButton.styleFrom(
                                         foregroundColor: Colors.white,

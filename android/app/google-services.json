@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "80853965349",
+    "project_id": "ecommerce-app-store",
+    "storage_bucket": "ecommerce-app-store.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:80853965349:android:a4bbdc9c3130ea31d4bdcc",
+        "android_client_info": {
+          "package_name": "com.gromova.ecommerce_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "80853965349-bhhgp2k9fm7vnljes8cf2o6sqe5u6dn3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gromova.ecommerce_app",
+            "certificate_hash": "7d9578f6db76146d5f4208b87251a4e35150ee08"
+          }
+        },
+        {
+          "client_id": "80853965349-26nk3vnbo5k7c83r3es7cq9ufmtfl09f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3yt9ke6iR9LUGvWGDpU86EkCE6nyQVGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "80853965349-26nk3vnbo5k7c83r3es7cq9ufmtfl09f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
