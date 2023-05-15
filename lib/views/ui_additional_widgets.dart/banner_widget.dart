@@ -10,6 +10,7 @@ class BannerWidget extends StatefulWidget {
 }
 
 class _BannerWidgetState extends State<BannerWidget> {
+
   @override
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final List _bannerImage = [];
