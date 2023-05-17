@@ -17,7 +17,7 @@ class _BannerWidgetState extends State<BannerWidget> {
 
   getBanners() {
     return _firestore
-        .collection('banners')
+        .collection("banners")
         .get()
         .then((QuerySnapshot querySnapshot) {
       querySnapshot.docs.forEach((doc) {
