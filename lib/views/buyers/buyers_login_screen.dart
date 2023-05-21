@@ -3,12 +3,16 @@ import 'package:ecommerce_app/views/ui_additional_widgets.dart/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../ui_additional_widgets.dart/border_clipper.dart';
 import '../ui_additional_widgets.dart/text_input.dart';
 
 class BuyersLoginScreen extends StatelessWidget {
-  const BuyersLoginScreen({super.key});
+
+  late String email;
+  late String fullName;
+  late String phoneNumber;
+  late String password;
+
 
   void _openHomePage(BuildContext context) {
     final newRoute = PageRouteBuilder<dynamic>(
@@ -82,18 +86,24 @@ class BuyersLoginScreen extends StatelessWidget {
                                 mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
                                   const SizedBox(height: 60),
-                                  const TextInput(
-                                    label: 'Username',
-                                    iconData: FontAwesome.user,
-                                    textInputType: TextInputType.emailAddress,
-                                  ),
+
+                                        TextFormField(
+          decoration: InputDecoration(
+              labelText: 'Email',
+              icon: Icon(Icons.alternate_email, color: elementsColor)),
+          onChanged: (value) {
+            email = value;
+          },
+        ),
                                   const SizedBox(height: 20),
-                                  const TextInput(
-                                    label: 'Password',
-                                    iconData: Icons.lock_outline,
-                                    textInputType:
-                                        TextInputType.visiblePassword,
-                                  ),
+                                         TextFormField(
+          decoration: InputDecoration(
+              labelText: 'Password',
+              icon: Icon(Icons.lock_outline, color: elementsColor)),
+          onChanged: (value) {
+            password = value;
+          },
+        ),
                                   const SizedBox(height: 10),
                                   TextButton(
                                     onPressed: () {},
@@ -111,8 +121,9 @@ class BuyersLoginScreen extends StatelessWidget {
                                     width: size.width * .65,
                                     child: TextButton(
                                       onPressed: () {
-                                         Navigator.of(context).push(MaterialPageRoute(builder: (context) => 
-                                         const BuyersMainScreen()));
+                                        //  Navigator.of(context).push(MaterialPageRoute(builder: (context) => 
+                                        //  const BuyersMainScreen()));
+                                        
                                       },
                                       style: TextButton.styleFrom(
                                         foregroundColor: Colors.white,

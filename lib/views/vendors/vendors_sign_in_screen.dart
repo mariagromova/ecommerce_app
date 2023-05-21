@@ -1,22 +1,18 @@
+import 'package:ecommerce_app/controllers/auth_controller.dart';
 import 'package:ecommerce_app/views/ui_additional_widgets.dart/colors.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../ui_additional_widgets.dart/border_clipper.dart';
-import '../ui_additional_widgets.dart/text_input.dart';
 
 class VendorsSignInScreen extends StatelessWidget {
-  const VendorsSignInScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
-
     final size = MediaQuery.of(context).size;
     final resizeNotifier = ValueNotifier<bool>(false);
 
-    WidgetsBinding.instance.addPostFrameCallback((_) { // +
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      // +
       if (!resizeNotifier.value) resizeNotifier.value = true;
     });
 
@@ -43,20 +39,16 @@ class VendorsSignInScreen extends StatelessWidget {
                   child: child!,
                 );
               },
-              child: SizedBox(   //+
+              child: SizedBox(
+                //+
                 height: size.height,
                 child: Column(
                   children: <Widget>[
                     SizedBox(height: size.height * .1),
-                  
                     const Spacer(),
                     Stack(
                       children: [
-                        const Center(
-                          child: 
-                          _DragDownIndication()
-                          )
-                          ,
+                        const Center(child: _DragDownIndication()),
                         Padding(
                           padding: const EdgeInsets.only(top: 105),
                           child: ClipPath(
@@ -66,10 +58,10 @@ class VendorsSignInScreen extends StatelessWidget {
                             child: Container(
                               height: 450,
                               width: double.infinity,
-                              color:basicColor,
+                              color: basicColor,
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 40),
-                              child: const _FormInputsColumn(),
+                              child: _FormInputsColumn(),
                             ),
                           ),
                         ),
@@ -87,57 +79,94 @@ class VendorsSignInScreen extends StatelessWidget {
 }
 
 class _FormInputsColumn extends StatelessWidget {
-  const _FormInputsColumn();
+
+  final AuthController _authController = AuthController();
+
+  late String email;
+  late String fullName;
+  late String phoneNumber;
+  late String password;
+
+  _signUpUser() async {
+    String res = await _authController.signUpUsers(
+        email, fullName, phoneNumber, password);
+
+    if (res != "success") {
+      print(res);
+    } else {
+      print('Good');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        const SizedBox(height: 60),
-        const TextInput(
-          label: 'Username',
-          iconData: FontAwesome.user,
-          textInputType: TextInputType.text,
-        ),
-        const SizedBox(height: 20),
-        const TextInput(
-          label: 'Email',
-          iconData: Icons.alternate_email,
-          textInputType: TextInputType.emailAddress,
-        ),
-        const SizedBox(height: 20),
-        const TextInput(
-          label: 'Password',
-          iconData: Icons.lock_outline,
-          textInputType: TextInputType.visiblePassword,
-        ),
-        const SizedBox(height: 5),
-
-        const SizedBox(height: 10),
-        SizedBox(
-          width: size.width * .65,
-          child: TextButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(
-              foregroundColor: basicColor,
-              padding: const EdgeInsets.all(12),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              backgroundColor: elementsColor,
-            ),
-            child: const Text(
-              'Create Account',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+           const SizedBox(height: 20),
+          TextFormField(
+            decoration: InputDecoration(
+                labelText: 'Email',
+                icon: Icon(Icons.alternate_email, color: elementsColor)),
+            onChanged: (value) {
+              email = value;
+            },
           ),
-        )
-      ],
+          const SizedBox(height: 20),
+          TextFormField(
+            decoration: InputDecoration(
+                labelText: 'Full name',
+                icon: Icon(FontAwesome.user, color: elementsColor)),
+            onChanged: (value) {
+              fullName = value;
+            },
+          ),
+          const SizedBox(height: 20),
+          TextFormField(
+            decoration: InputDecoration(
+                labelText: 'Phone number',
+                icon: Icon(FontAwesome.phone, color: elementsColor)),
+            onChanged: (value) {
+              fullName = value;
+            },
+          ),
+          const SizedBox(height: 20),
+          TextFormField(
+            decoration: InputDecoration(
+                labelText: 'Password',
+                icon: Icon(Icons.lock_outline, color: elementsColor)),
+            onChanged: (value) {
+              fullName = value;
+            },
+          ),
+          SizedBox(height: 10),
+          SizedBox(
+            width: size.width * .65,
+            child: TextButton(
+              onPressed: () {
+                _signUpUser();
+              },
+              style: TextButton.styleFrom(
+                foregroundColor: basicColor,
+                padding: const EdgeInsets.all(12),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                backgroundColor: elementsColor,
+              ),
+              child: const Text(
+                'Create Account',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
@@ -149,14 +178,12 @@ class _DragDownIndication extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-         Text(
-           style: GoogleFonts.poppins(
-              fontWeight: FontWeight.w700,
-              fontSize: 40,
-              color: logoColor),
-              'Sign in',   
-               ),
-       Text(
+        Text(
+          style: GoogleFonts.poppins(
+              fontWeight: FontWeight.w700, fontSize: 40, color: logoColor),
+          'Sign in',
+        ),
+        Text(
           'Swipe to go back',
           style: TextStyle(
             fontWeight: FontWeight.bold,
@@ -174,6 +201,3 @@ class _DragDownIndication extends StatelessWidget {
     );
   }
 }
-
-
-

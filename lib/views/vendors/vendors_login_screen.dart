@@ -82,18 +82,23 @@ class VendorsLoginScreen extends StatelessWidget {
                                 mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
                                   const SizedBox(height: 60),
-                                  const TextInput(
-                                    label: 'Username',
-                                    iconData: FontAwesome.user,
-                                    textInputType: TextInputType.emailAddress,
-                                  ),
+                                  TextFormField(
+          decoration: InputDecoration(
+              labelText: 'Email',
+              icon: Icon(Icons.alternate_email, color: elementsColor)),
+          onChanged: (value) {
+            // email = value;
+          },
+        ),
                                   const SizedBox(height: 20),
-                                  const TextInput(
-                                    label: 'Password',
-                                    iconData: Icons.lock_outline,
-                                    textInputType:
-                                        TextInputType.visiblePassword,
-                                  ),
+                                       TextFormField(
+          decoration: InputDecoration(
+              labelText: 'Password',
+              icon: Icon(Icons.lock_outline, color: elementsColor)),
+          onChanged: (value) {
+            // password = value;
+          },
+        ),
                                   const SizedBox(height: 10),
                                   TextButton(
                                     onPressed: () {},

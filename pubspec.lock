@@ -77,10 +77,10 @@ packages:
     dependency: transitive
     description:
       name: collection
-      sha256: "4a07be6cb69c84d677a6c3096fcf960cc3285a8330b4603e0d463d15d9bd934c"
+      sha256: f092b211a4319e98e5ff58223576de6c2803db36221657b46c82574721240687
       url: "https://pub.dev"
     source: hosted
-    version: "1.17.1"
+    version: "1.17.2"
   cross_file:
     dependency: transitive
     description:
@@ -206,14 +206,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_admin_scaffold:
-    dependency: "direct main"
-    description:
-      name: flutter_admin_scaffold
-      sha256: "16f39c54d999e025e5b8fb680c86836375b3c0d63fded9d9219c309fa31f7f1e"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.2.0"
   flutter_lints:
     dependency: "direct dev"
     description:

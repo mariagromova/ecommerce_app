@@ -12,9 +12,7 @@ class BuyersScreen extends StatelessWidget {
 
   final hideNotifier = ValueNotifier(false);
   
-    final resizeNotifier = ValueNotifier<bool>(false);
-
-  
+  final resizeNotifier = ValueNotifier<bool>(false);
 
   @override
   Widget build(BuildContext context) {
