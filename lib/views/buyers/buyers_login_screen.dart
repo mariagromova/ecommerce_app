@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/controllers/auth_controller.dart';
 import 'package:ecommerce_app/utils/show_snackbar.dart';
 import 'package:ecommerce_app/views/buyers/buyers_main_screen.dart';
+import 'package:ecommerce_app/views/buyers/buyers_screen.dart';
 import 'package:ecommerce_app/views/ui_additional_widgets.dart/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -33,8 +34,12 @@ class _BuyersLoginScreenState extends State<BuyersLoginScreen> {
 
   _loginUsers() async {
     if (_formKey.currentState!.validate()) {
-      await _authController.loginUsers(email, password);
-      return showSnackbar(context, 'You are now logged in');
+      String res = await _authController.loginUsers(email, password);
+
+      return Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (BuildContext context) {
+        return BuyersScreen();
+      }));
     } else {
       return showSnackbar(context, 'Fields must not be empty');
     }
