@@ -1,11 +1,11 @@
+import 'dart:typed_data';
 import 'package:ecommerce_app/controllers/auth_controller.dart';
 import 'package:ecommerce_app/utils/show_snackbar.dart';
 import 'package:ecommerce_app/views/ui_additional_widgets.dart/colors.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:image_picker/image_picker.dart';
 import '../ui_additional_widgets.dart/border_clipper.dart';
 import '../ui_additional_widgets.dart/text_input.dart';
 
@@ -101,6 +101,8 @@ class _FormInputsColumnState extends State<_FormInputsColumn> {
 
   bool _isLoading = false;
 
+  Uint8List? _image;
+
   _signUpUser() async {
     setState(() {
       _isLoading = true;
@@ -123,7 +125,14 @@ class _FormInputsColumnState extends State<_FormInputsColumn> {
     }
   }
 
-  // _signUpUser() async {
+  selectGalleryImage() async {
+    Uint8List im =
+        await _authController.pickProfileImage(ImageSource.gallery);
+    setState(() {
+      _image = im;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;

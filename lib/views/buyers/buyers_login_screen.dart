@@ -38,7 +38,7 @@ class _BuyersLoginScreenState extends State<BuyersLoginScreen> {
 
       return Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (BuildContext context) {
-        return BuyersScreen();
+        return BuyersMainScreen();
       }));
     } else {
       return showSnackbar(context, 'Fields must not be empty');
